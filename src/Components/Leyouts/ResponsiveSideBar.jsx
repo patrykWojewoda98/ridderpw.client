@@ -6,6 +6,8 @@ import {
   CDBSidebarMenuItem,
 } from "cdbreact";
 import { Link } from "react-router-dom";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 
 import Button from "react-bootstrap/Button";
 
@@ -21,12 +23,40 @@ export default function ResponsiveSideBar() {
             className="text-decoration-none"
             style={{ color: "inherit" }}
           >
-            Inne
+            Szybki dostęp
           </Link>
-          <CDBSidebarMenu>
-            <span style={{ fontSize: "12px" }}>Grupa 1</span>
-            <CDBSidebarMenuItem>assd</CDBSidebarMenuItem>
-          </CDBSidebarMenu>
+          <CDBSidebarMenuItem>Kalendarz</CDBSidebarMenuItem>
+          <CDBSidebarMenuItem>Aktualności</CDBSidebarMenuItem>
+          <CDBSidebarMenuItem>Wiadomości</CDBSidebarMenuItem>
+        </CDBSidebarHeader>
+
+        <CDBSidebarHeader>
+          <Link
+            to="/"
+            className="text-decoration-none"
+            style={{ color: "inherit" }}
+          >
+            Logowanie
+          </Link>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Login"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="Login" />
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingPassword" label="Hasło">
+            <Form.Control type="password" placeholder="Hasło" />
+          </FloatingLabel>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button variant="secondary">Zaloguj się</Button>
+          </div>
         </CDBSidebarHeader>
 
         <CDBSidebarFooter style={{ textAlign: "center" }}>
@@ -38,7 +68,7 @@ export default function ResponsiveSideBar() {
               flexDirection: "column",
             }}
           >
-            Skontaktuj sie z nami!
+            Pomoc techniczna
             <Button variant="secondary" style={{ marginBottom: "10px" }}>
               Telefon
             </Button>{" "}
@@ -50,4 +80,8 @@ export default function ResponsiveSideBar() {
       </CDBSidebar>
     </div>
   );
+}
+
+function callCalc() {
+  alert("Hello! I am an alert box!");
 }

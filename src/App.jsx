@@ -113,14 +113,18 @@ function App() {
           </Col>
           <Col>
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img
+                variant="top"
+                src="../src/Components/Pictures/RaportsPicture.jpg"
+                className="cardsLogo"
+              />
               <Card.Body>
-                <Card.Title>Tu trzeba coś wymyślić</Card.Title>
+                <Card.Title>Raporty i Analizy</Card.Title>
                 <Card.Text>
-                  Tu trzeba coś wymyślić!!! Tu trzeba coś wymyślić!!! Tu trzeba
-                  coś wymyślić!!!
+                  Raporty miesieczne, kwartalne i roczne. Analiza zysków i
+                  strat.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">Idz do Raportów i Analiz</Button>
               </Card.Body>
             </Card>
           </Col>
