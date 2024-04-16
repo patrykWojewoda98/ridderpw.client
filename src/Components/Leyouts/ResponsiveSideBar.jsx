@@ -81,7 +81,3 @@ export default function ResponsiveSideBar() {
     </div>
   );
 }
-
-function callCalc() {
-  alert("Hello! I am an alert box!");
-}
