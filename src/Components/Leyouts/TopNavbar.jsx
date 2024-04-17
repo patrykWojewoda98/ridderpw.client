@@ -30,9 +30,6 @@ export const TopNavbar = () => {
                 <Link to={"/Management"}>Zarządzanie</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to={"/Management"}>Zarządzanie</Link>
-              </Nav.Link>
-              <Nav.Link>
                 <Link to={"/Production"}>Produkcja</Link>
               </Nav.Link>
               <Nav.Link>
@@ -44,19 +41,9 @@ export const TopNavbar = () => {
               <Nav.Link>
                 <Link to={"/Finances"}>Finanse</Link>
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link>
+                <Link to={"/Management"}>Raporty i Analizy</Link>
+              </Nav.Link>
             </Nav>
             <Nav>
               <Form inline>

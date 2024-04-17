@@ -1,0 +1,22 @@
+/* Styl dla całego komponentu Tabs */
+.custom-tabs .nav-tabs {
+  background-color: transparent; /* Tło przezroczyste dla całego paska zakładek */
+  border-bottom: 1px solid #dee2e6; /* Subtelna linia oddzielająca zakładki od zawartości */
+}
+
+/* Styl dla tekstu na nieaktywnych zakładkach */
+.custom-tabs .nav-link {
+  color: white; /* Biały tekst */
+  font-weight: bold; /* Pogrubienie tekstu */
+  background-color: rgba(255, 255, 255, 0.5); /* Półprzezroczyste tło */
+  border: 1px solid #dee2e6; /* Obramowanie */
+  margin-right: 2px; /* Odstęp między zakładkami */
+}
+
+/* Styl dla tekstu na aktywnej zakładce */
+.custom-tabs .nav-link.active {
+  color: black; /* Czarny tekst */
+  font-weight: bold; /* Pogrubienie tekstu */
+  background-color: white; /* Białe tło */
+  border-color: #dee2e6; /* Kolor obramowania */
+}
