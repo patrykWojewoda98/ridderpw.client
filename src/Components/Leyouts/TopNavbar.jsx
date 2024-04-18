@@ -42,7 +42,7 @@ export const TopNavbar = () => {
                 <Link to={"/Finances"}>Finanse</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to={"/Management"}>Raporty i Analizy</Link>
+                <Link to={"/Reports&Analytics"}>Raporty i Analizy</Link>
               </Nav.Link>
             </Nav>
             <Nav>

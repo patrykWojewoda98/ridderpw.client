@@ -45,7 +45,7 @@ function App() {
                   towaru, lub ich braków.
                 </Card.Text>
                 <Button variant="primary">
-                  <Link to={"/Management"}>Idz do Produkcji</Link>
+                  <Link to={"/Production"}>Idz do Produkcji</Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -64,7 +64,7 @@ function App() {
                   Zgłaszanie/odczyt aktualnej lokalizacji towaru.
                 </Card.Text>
                 <Button variant="primary">
-                  <Link to={"/Management"}>Idz do Logistyki</Link>
+                  <Link to={"/Logistic"}>Idz do Logistyki</Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -87,7 +87,7 @@ function App() {
                   Dodawanie, edycja oraz sprawdzanie listy pracowników.
                 </Card.Text>
                 <Button variant="primary">
-                  <Link to={"/Management"}>Idz do Kadr</Link>
+                  <Link to={"/Personnel"}>Idz do Kadr</Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -106,7 +106,7 @@ function App() {
                   stanu finansów. Zlecanie przelewów.
                 </Card.Text>
                 <Button variant="primary">
-                  <Link to={"/Management"}>Idz do Finansów</Link>
+                  <Link to={"/Finances"}>Idz do Finansów</Link>
                 </Button>
               </Card.Body>
             </Card>
@@ -124,7 +124,9 @@ function App() {
                   Raporty miesieczne, kwartalne i roczne. Analiza zysków i
                   strat.
                 </Card.Text>
-                <Button variant="primary">Idz do Raportów i Analiz</Button>
+                <Button variant="primary">
+                  <Link to={"/Reports&Analytics"}>Idz do Finansów</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>
