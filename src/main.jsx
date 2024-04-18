@@ -71,6 +71,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <>
               <TopNavbar />
               <div style={{ display: "flex" }}>
+                {" "}
                 <div>
                   <ResponsiveSideBar />
                 </div>

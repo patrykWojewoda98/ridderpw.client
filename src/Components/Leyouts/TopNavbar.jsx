@@ -33,7 +33,7 @@ export const TopNavbar = () => {
                 <Link to={"/Production"}>Produkcja</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to={"/Logistics"}>Logistyka</Link>
+                <Link to={"/Logistic"}>Logistyka</Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to={"/Personnel"}>Kadry</Link>
