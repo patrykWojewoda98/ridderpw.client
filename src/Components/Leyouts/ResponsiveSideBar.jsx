@@ -2,7 +2,6 @@ import {
   CDBSidebar,
   CDBSidebarFooter,
   CDBSidebarHeader,
-  CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from "cdbreact";
 import { Link } from "react-router-dom";

@@ -8,6 +8,8 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import { CompanySelection } from "../Components/PageComponents/CompanySelection";
+import { CategorySelection } from "../Components/PageComponents/CategorySelection";
 
 export const ManagementPage = () => {
   return (
@@ -32,21 +34,8 @@ export const ManagementPage = () => {
                   </Form.Group>
                 </Col>
                 <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Firma</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option>Wybierz</option>
-                      <option value="1">Tata Steel Ltd</option>
-                      <option value="2">
-                        NASA-Narodowa Agencja Aeronautyki i Przestrzeni
-                        Kosmicznej
-                      </option>
-                      <option value="3">PKP Intercity SA</option>
-                      <option value="4">Korea Electric Power Corp</option>
-                      <option value="5">Emirates</option>
-                      <option value="6">Huta Stalowa Wola</option>
-                    </Form.Select>
-                  </Form.Group>
+                  <Form.Label>Firma</Form.Label>
+                  <CompanySelection />
                 </Col>
               </Row>
               <Row>
@@ -59,18 +48,7 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Kategoria</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option>Wybierz</option>
-                      <option value="1">Cześci do przemysłu lotniczego</option>
-                      <option value="2">Cześci do przemysłu kosmicznego</option>
-                      <option value="3">Cześci do przemysłu kolejowego</option>
-                      <option value="4">
-                        Cześci do przemysłu energetycznego
-                      </option>
-                      <option value="5">Cześci do przemysłu hutniczego</option>
-                      <option value="6">Cześci na specjalne zamówienie</option>
-                      <option value="7">Zlecenie wielkoseryjne</option>
-                    </Form.Select>
+                    <CategorySelection />
                   </Form.Group>
                 </Col>
               </Row>
@@ -92,18 +70,7 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Kategoria</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option>Wybierz</option>
-                      <option value="1">Cześci do przemysłu lotniczego</option>
-                      <option value="2">Cześci do przemysłu kosmicznego</option>
-                      <option value="3">Cześci do przemysłu kolejowego</option>
-                      <option value="4">
-                        Cześci do przemysłu energetycznego
-                      </option>
-                      <option value="5">Cześci do przemysłu hutniczego</option>
-                      <option value="6">Cześci na specjalne zamówienie</option>
-                      <option value="7">Zlecenie wielkoseryjne</option>
-                    </Form.Select>
+                    <CategorySelection />
                   </Form.Group>
                 </Col>
               </Row>
@@ -146,18 +113,7 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Firma</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option>Wybierz</option>
-                      <option value="1">Tata Steel Ltd</option>
-                      <option value="2">
-                        NASA-Narodowa Agencja Aeronautyki i Przestrzeni
-                        Kosmicznej
-                      </option>
-                      <option value="3">PKP Intercity SA</option>
-                      <option value="4">Korea Electric Power Corp</option>
-                      <option value="5">Emirates</option>
-                      <option value="6">Huta Stalowa Wola</option>
-                    </Form.Select>
+                    <CompanySelection />
                   </Form.Group>
                 </Col>
                 <Col>
