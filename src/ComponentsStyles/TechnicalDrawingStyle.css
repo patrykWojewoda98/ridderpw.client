@@ -1,0 +1,6 @@
+.modal-image {
+  width: 100%; /* Rozciąga obrazek na całą szerokość kontenera */
+  max-width: 100%; /* Zapewnia, że obrazek nie będzie większy niż kontener */
+  height: auto; /* Zapewnia, że wysokość jest automatycznie dostosowywana */
+  margin: 10px 0; /* Dodaje górny i dolny margines dla obrazka */
+}

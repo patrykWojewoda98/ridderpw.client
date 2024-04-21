@@ -1,13 +1,23 @@
 import "../App.css";
 import "../ComponentsStyles/AccordionStyle.css";
+import "../ComponentsStyles/TechnicalDrawingStyle.css";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { FilterList } from "../Components/PageComponents/FilterList";
+import { Button, Modal, ModalBody } from "react-bootstrap";
+import { useState } from "react";
 
 export const ProductionPage = () => {
+  {
+    /*Tworzenie zmiennej stanowej dla wyświetlania Modalu po kliknieciu na ikone przejdz do rysunku technicznego*/
+  }
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Container>
       <FilterList />
@@ -64,8 +74,30 @@ export const ProductionPage = () => {
                 <Image
                   src="../src/Components/Pictures/TechnicalDrawing.png"
                   className="logo"
+                  onClick={handleShow}
                 />
               </Link>
+              {/*Deklaracja Modalu ktury sie ma pojawić */}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Rysunek techniczny Oraz rysunek 3D</Modal.Title>
+                </Modal.Header>
+                <ModalBody>
+                  <Image
+                    src="../src/Components/Pictures/TechnicalDrawings/Rolka Transportowa rysunek techniczny.png"
+                    className="modal-image"
+                  />
+                  <Image
+                    src="../src/Components/Pictures/TechnicalDrawings/Rolka Transportowa 3D.png"
+                    className="modal-image"
+                  />
+                </ModalBody>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Wyjdz z rysunku
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </td>
           </tr>
           <tr>
@@ -103,6 +135,7 @@ export const ProductionPage = () => {
                 <Image
                   src="../src/Components/Pictures/TechnicalDrawing.png"
                   className="logo"
+                  onClick={handleShow}
                 />
               </Link>
             </td>
@@ -142,6 +175,7 @@ export const ProductionPage = () => {
                 <Image
                   src="../src/Components/Pictures/TechnicalDrawing.png"
                   className="logo"
+                  onClick={handleShow}
                 />
               </Link>
             </td>
