@@ -1,4 +1,5 @@
 import "../ComponentsStyles/TabsStyle.css";
+import "../ComponentsStyles/FormLabelStyle.css";
 import "../App.css";
 
 import Button from "react-bootstrap/Button";
@@ -26,7 +27,7 @@ export const ManagementPage = () => {
               title="Nowe Zlecenie"
               className="basicFont"
             >
-              <Row>
+              <Row className="custom-label">
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Numer Zlecenia</Form.Label>
@@ -38,7 +39,7 @@ export const ManagementPage = () => {
                   <CompanySelection />
                 </Col>
               </Row>
-              <Row>
+              <Row className="custom-label">
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Nazwa Produktu</Form.Label>
@@ -52,7 +53,7 @@ export const ManagementPage = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className="custom-label">
                 <Form.Group className="position-relative mb-3">
                   <Form.Label>Rysunek techniczny</Form.Label>
                   <Form.Control type="file" required name="file" />
@@ -60,7 +61,7 @@ export const ManagementPage = () => {
               </Row>
             </Tab>
             <Tab eventKey="newCompany" title="Nowa firma" className="basicFont">
-              <Row>
+              <Row className="custom-label">
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Nazwa firmy</Form.Label>
@@ -74,7 +75,7 @@ export const ManagementPage = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className="custom-label">
                 <Col xs={4}>
                   <Form.Group className="mb-3">
                     <Form.Label>Nip</Form.Label>
@@ -91,7 +92,7 @@ export const ManagementPage = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className="custom-label">
                 <Col xs={3}></Col>
                 <Col>
                   <Form.Group className="mb-3">
@@ -109,7 +110,7 @@ export const ManagementPage = () => {
               </Row>
             </Tab>
             <Tab eventKey="complaints" title="Reklamacje" className="basicFont">
-              <Row>
+              <Row className="custom-label">
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Firma</Form.Label>
@@ -123,7 +124,7 @@ export const ManagementPage = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className="custom-label">
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Uwagi</Form.Label>
