@@ -9,8 +9,16 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
+import { LoginMenu } from "./SideBarComponents/LoginMenu";
 
 export default function ResponsiveSideBar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const loginState = {
+    isLoggedIn,
+    setIsLoggedIn,
+  };
+
   return (
     <div
       style={{ display: "flex", height: "100vh", overflow: "scroll initial" }}
@@ -29,34 +37,7 @@ export default function ResponsiveSideBar() {
           <CDBSidebarMenuItem>Wiadomości</CDBSidebarMenuItem>
         </CDBSidebarHeader>
 
-        <CDBSidebarHeader>
-          <Link
-            to="/"
-            className="text-decoration-none"
-            style={{ color: "inherit" }}
-          >
-            Logowanie
-          </Link>
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Login"
-            className="mb-3"
-          >
-            <Form.Control type="text" placeholder="Login" />
-          </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Hasło">
-            <Form.Control type="password" placeholder="Hasło" />
-          </FloatingLabel>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Button variant="secondary">Zaloguj się</Button>
-          </div>
-        </CDBSidebarHeader>
+        <LoginMenu loginState={loginState} />
 
         <CDBSidebarFooter style={{ textAlign: "center" }}>
           <div
