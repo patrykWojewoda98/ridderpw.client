@@ -6,10 +6,18 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "./Components/Contexts/LoginContext";
 
 function App() {
+  const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
+  const loginState = {
+    isLoggedIn,
+    setIsLoggedIn,
+  };
   return (
     <Container>
+      <Row>{isLoggedIn && <h1>Zalogowano</h1>}</Row>
       <Row>
         <div className="centered-content">
           <Col>

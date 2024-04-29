@@ -9,11 +9,12 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LoginMenu } from "./SideBarComponents/LoginMenu";
+import { LoginContext } from "../Contexts/LoginContext";
 
 export default function ResponsiveSideBar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
   const loginState = {
     isLoggedIn,
     setIsLoggedIn,
