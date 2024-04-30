@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="background">
       {isLoggedIn && (
-        <div>
+        <div style={{ height: "92.5vh" }}>
           <Container>
             <Row className="tabs-magrin">
               <div className="centered-content">
@@ -253,6 +253,35 @@ function App() {
             </div>
           </header>
           <body>
+            <h1>O RidderPW</h1>
+            <p>
+              RidderPW to nowoczesne rozwiązanie ERP, które zaprojektowano z
+              myślą o dynamice współczesnych przedsiębiorstw. Dzięki
+              zaawansowanej technologii i modułowej strukturze, RidderPW
+              idealnie dostosowuje się do specyficznych potrzeb Twojej firmy,
+              umożliwiając łatwe zarządzanie zasobami, finansami, kadrami oraz
+              logistyką. Nasz system gwarantuje nie tylko pełną kontrolę nad
+              każdym segmentem działalności, ale również zapewnia bezpieczeństwo
+              danych na najwyższym poziomie. Wybierz RidderPW i przekonaj się,
+              jak łatwo można przyspieszyć rozwój firmy, poprawić efektywność
+              operacyjną i osiągnąć lepsze wyniki dzięki jednemu, kompleksowemu
+              narzędziu.
+            </p>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
+            <h1>O RidderPW</h1>
             <h1>O RidderPW</h1>
           </body>
         </div>

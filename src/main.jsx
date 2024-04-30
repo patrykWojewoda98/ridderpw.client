@@ -26,10 +26,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={
               <>
                 <TopNavbar />
-                <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", height: "100%" }}>
                   {" "}
                   {/*Ten fragment odpowiada za rozmieszczenie komponentów obok siebie */}
-                  <div style={{ height: "100%" }}>
+                  <div>
                     <ResponsiveSideBar />
                   </div>
                   <App />
