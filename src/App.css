@@ -64,3 +64,9 @@
 .datePicker {
   background-color: white;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 1); /* Czarne tło z półprzezroczystością */
+  border-radius: 50%; /* Okrągłe tło */
+}
