@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <div style={{ display: "flex" }}>
                   {" "}
                   {/*Ten fragment odpowiada za rozmieszczenie komponentów obok siebie */}
-                  <div>
+                  <div style={{ height: "100%" }}>
                     <ResponsiveSideBar />
                   </div>
                   <App />
@@ -45,7 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <div style={{ display: "flex" }}>
                   {" "}
                   {/*Ten fragment odpowiada za rozmieszczenie komponentów obok siebie */}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <ManagementPage />
@@ -60,7 +60,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <TopNavbar />
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <ProductionPage />
@@ -75,7 +75,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <TopNavbar />
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <LogisticPage />
@@ -91,7 +91,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <TopNavbar />
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <PersonnelPage />
@@ -106,7 +106,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <TopNavbar />
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <FinancesPage />
@@ -121,7 +121,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <TopNavbar />
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <div>
+                  <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
                   <ReportsAndAnalyticsPage />
