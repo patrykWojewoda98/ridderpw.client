@@ -9,9 +9,11 @@ import { ProductionPageTable } from "../Components/PageComponents/ProductionPage
 
 export const ProductionPage = () => {
   return (
-    <Container>
-      <FilterList />
-      <ProductionPageTable />
-    </Container>
+    <div className="background">
+      <Container>
+        <FilterList />
+        <ProductionPageTable />
+      </Container>
+    </div>
   );
 };

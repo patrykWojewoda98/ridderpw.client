@@ -18,131 +18,133 @@ function App() {
     setIsLoggedIn,
   };
   return (
-    <Container>
+    <div className="background">
       {isLoggedIn && (
         <div>
-          <Row>
-            <div className="centered-content">
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/ManagementPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Zarządzanie</Card.Title>
-                    <Card.Text>
-                      Składanie nowych zamówień, przypisywanie maszyn, oraz
-                      zapisywanie przewidywanego czasu realizacji
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Management"}>Idz do Zarządzania</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/ProductionPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Produkcja</Card.Title>
-                    <Card.Text>
-                      Rozpoczynanie i kontrola czasu pracy. Zgłaszanie defektów
-                      towaru, lub ich braków.
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Production"}>Idz do Produkcji</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/LogisticsPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Logistyka</Card.Title>
-                    <Card.Text>
-                      Zgłaszanie rozpoczęcia/zakończenia transportu towaru.
-                      Zgłaszanie/odczyt aktualnej lokalizacji towaru.
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Logistic"}>Idz do Logistyki</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </div>
-          </Row>
+          <Container>
+            <Row className="tabs-magrin">
+              <div className="centered-content">
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/ManagementPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Zarządzanie</Card.Title>
+                      <Card.Text>
+                        Składanie nowych zamówień, przypisywanie maszyn, oraz
+                        zapisywanie przewidywanego czasu realizacji
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Management"}>Idz do Zarządzania</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/ProductionPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Produkcja</Card.Title>
+                      <Card.Text>
+                        Rozpoczynanie i kontrola czasu pracy. Zgłaszanie
+                        defektów towaru, lub ich braków.
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Production"}>Idz do Produkcji</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/LogisticsPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Logistyka</Card.Title>
+                      <Card.Text>
+                        Zgłaszanie rozpoczęcia/zakończenia transportu towaru.
+                        Zgłaszanie/odczyt aktualnej lokalizacji towaru.
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Logistic"}>Idz do Logistyki</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </div>
+            </Row>
 
-          <Row>
-            <div className="centered-content">
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/PersonnelPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Kadry</Card.Title>
-                    <Card.Text>
-                      Dodawanie, edycja oraz sprawdzanie listy pracowników.
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Personnel"}>Idz do Kadr</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/FinancesPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Finanse</Card.Title>
-                    <Card.Text>
-                      Obliczanie kosztów realizacji zlecenia. Sprawdzanie
-                      aktualnego stanu finansów. Zlecanie przelewów.
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Finances"}>Idz do Finansów</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src="../src/Components/Pictures/RaportsPicture.jpg"
-                    className="cardsLogo"
-                  />
-                  <Card.Body>
-                    <Card.Title>Raporty i Analizy</Card.Title>
-                    <Card.Text>
-                      Raporty miesieczne, kwartalne i roczne. Analiza zysków i
-                      strat.
-                    </Card.Text>
-                    <Button variant="primary">
-                      <Link to={"/Reports&Analytics"}>Idz do Finansów</Link>
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </div>
-          </Row>
+            <Row>
+              <div className="centered-content">
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/PersonnelPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Kadry</Card.Title>
+                      <Card.Text>
+                        Dodawanie, edycja oraz sprawdzanie listy pracowników.
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Personnel"}>Idz do Kadr</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/FinancesPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Finanse</Card.Title>
+                      <Card.Text>
+                        Obliczanie kosztów realizacji zlecenia. Sprawdzanie
+                        aktualnego stanu finansów. Zlecanie przelewów.
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Finances"}>Idz do Finansów</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src="../src/Components/Pictures/RaportsPicture.jpg"
+                      className="cardsLogo"
+                    />
+                    <Card.Body>
+                      <Card.Title>Raporty i Analizy</Card.Title>
+                      <Card.Text>
+                        Raporty miesieczne, kwartalne i roczne. Analiza zysków i
+                        strat.
+                      </Card.Text>
+                      <Button variant="primary">
+                        <Link to={"/Reports&Analytics"}>Idz do Finansów</Link>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </div>
+            </Row>
+          </Container>
         </div>
       )}
 
@@ -250,9 +252,12 @@ function App() {
               </div>
             </div>
           </header>
+          <body>
+            <h1>O RidderPW</h1>
+          </body>
         </div>
       )}
-    </Container>
+    </div>
   );
 }
 

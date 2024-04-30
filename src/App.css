@@ -1,18 +1,4 @@
-﻿body {
-  background-image: url("../src/Components/Pictures/Milling\ background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-animation: slidein 100s;
-  animation: slidein 100s;
-
-  animation-fill-mode: forwards;
-
-  animation-iteration-count: infinite;
-
-  animation-direction: alternate;
-}
-
-@keyframes slidein {
+﻿@keyframes slidein {
   from {
     background-position: top;
     background-size: 3000px;
@@ -69,4 +55,28 @@
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 1); /* Czarne tło z półprzezroczystością */
   border-radius: 50%; /* Okrągłe tło */
+}
+
+.background {
+  background-image: url("../src/Components/Pictures/Milling\ background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  animation-fill-mode: forwards;
+
+  animation-iteration-count: infinite;
+
+  animation-direction: alternate;
+  width: 100%;
+}
+
+.tabs-maggin {
+  margin-left: 20px; /* Margines z lewej strony */
+  margin-right: 20px; /* Margines z prawej strony */
+}
+
+body {
+  background-color: white;
 }
