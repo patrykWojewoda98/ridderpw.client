@@ -401,7 +401,7 @@ function App() {
                           <Button
                             variant="primary"
                             type="submit"
-                            disabled={agreed}
+                            disabled={!agreed}
                           >
                             Prześlij
                           </Button>
