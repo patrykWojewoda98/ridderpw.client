@@ -358,8 +358,16 @@ function App() {
                     </Col>
                   </Row>
                   <Row>
+                    <h1 className="h1-applay">
+                      <strong>
+                        Przenieś swoją firmę na wyższy poziom zarządzania już
+                        dziś!
+                      </strong>
+                    </h1>
+                  </Row>
+                  <Row>
                     {showForm && (
-                      <>
+                      <div style={{ marginBottom: "50px" }}>
                         <Form>
                           <Form.Group
                             className="mb-3"
@@ -406,7 +414,7 @@ function App() {
                             Prześlij
                           </Button>
                         </Form>
-                      </>
+                      </div>
                     )}
                   </Row>
                 </div>

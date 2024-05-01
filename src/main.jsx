@@ -15,7 +15,7 @@ import { FinancesPage } from "./Pages/FinancesPage.jsx";
 import { ReportsAndAnalyticsPage } from "./Pages/ReportsAndAnalyticsPage.jsx";
 import { LogisticPage } from "./Pages/LogisticPage.jsx";
 import { LoginProvider } from "./Components/Contexts/LoginContext.jsx";
-
+import Footer from "./Components/Leyouts/Footer.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -34,6 +34,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <App />
                 </div>
+
+                <Footer />
               </>
             }
           />
@@ -50,6 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <ManagementPage />
                 </div>
+                <Footer />
               </>
             }
           />
@@ -65,6 +68,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <ProductionPage />
                 </div>
+                <Footer />
               </>
             }
           />
@@ -80,6 +84,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <LogisticPage />
                 </div>
+                <Footer />
               </>
             }
           />
@@ -96,6 +101,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <PersonnelPage />
                 </div>
+                <Footer />
               </>
             }
           />
@@ -111,6 +117,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <FinancesPage />
                 </div>
+                <Footer />
               </>
             }
           />
@@ -126,6 +133,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   </div>
                   <ReportsAndAnalyticsPage />
                 </div>
+                <Footer />
               </>
             }
           />
