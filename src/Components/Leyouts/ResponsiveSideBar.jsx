@@ -7,13 +7,26 @@ import {
 import { Link } from "react-router-dom";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-
+import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useContext, useState } from "react";
 import { LoginMenu } from "./SideBarComponents/LoginMenu";
 import { LoginContext } from "../Contexts/LoginContext";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 export default function ResponsiveSideBar() {
+  const [date, setdate] = useState(new Date());
+
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const handleCloseCalendar = () => setShowCalendar(false);
+  const handleShowCalendar = () => setShowCalendar(true);
+
+  const onChange = (date) => {
+    setdate(date);
+  };
+
   const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
   const loginState = {
     isLoggedIn,
@@ -33,7 +46,9 @@ export default function ResponsiveSideBar() {
           >
             Szybki dostęp
           </Link>
-          <CDBSidebarMenuItem>Kalendarz</CDBSidebarMenuItem>
+          <CDBSidebarMenuItem onClick={handleShowCalendar}>
+            Kalendarz
+          </CDBSidebarMenuItem>
           <CDBSidebarMenuItem>Aktualności</CDBSidebarMenuItem>
           <CDBSidebarMenuItem>Wiadomości</CDBSidebarMenuItem>
         </CDBSidebarHeader>
@@ -57,6 +72,22 @@ export default function ResponsiveSideBar() {
               Email
             </Button>{" "}
           </div>
+
+          <Modal show={showCalendar} onHide={handleCloseCalendar}>
+            <Modal.Header closeButton>
+              <Modal.Title>Kalendarz</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div>
+                <Calendar onChange={setdate} value={date} />
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseCalendar}>
+                Zamknij
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </CDBSidebarFooter>
       </CDBSidebar>
     </div>
