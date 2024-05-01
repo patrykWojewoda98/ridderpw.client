@@ -5,11 +5,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Form } from "react-bootstrap";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { useContext, useState } from "react";
 import { LoginContext } from "./Components/Contexts/LoginContext";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
+import { Link } from "react-router-dom";
 
 function App() {
   const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
@@ -17,6 +19,11 @@ function App() {
     isLoggedIn,
     setIsLoggedIn,
   };
+
+  const [showForm, setShowForm] = useState(false);
+  const handleShow = () => setShowForm(true);
+
+  const [agreed, setAgreed] = useState(false);
   return (
     <div className="background">
       {isLoggedIn && (
@@ -201,7 +208,7 @@ function App() {
                         <h3>Dostosowany do Twoich Potrzeb</h3>
                         <p>
                           Ty mówisz czego oczekujesz od systemu ERP, a my to
-                          robimy!
+                          zaaplikujemy do zbudowanego pod panstwa firme systemu!
                         </p>
                       </Carousel.Caption>
                     </Carousel.Item>
@@ -253,7 +260,7 @@ function App() {
             </div>
           </header>
           <body>
-            <h1>O RidderPW</h1>
+            <h2>O RidderPW</h2>
             <p>
               RidderPW to nowoczesne rozwiązanie ERP, które zaprojektowano z
               myślą o dynamice współczesnych przedsiębiorstw. Dzięki
@@ -267,22 +274,144 @@ function App() {
               operacyjną i osiągnąć lepsze wyniki dzięki jednemu, kompleksowemu
               narzędziu.
             </p>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
-            <h1>O RidderPW</h1>
+
+            <div className="partners-bacground">
+              <Container>
+                <Row>
+                  <h2 className="h2-partners">
+                    <strong>Partnerzy którzy nam zaufali</strong>
+                  </h2>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src="src\Components\Pictures\FizztastiicLogo.png"
+                      />
+                      <Card.Body>
+                        <Card.Title>Fizztastic</Card.Title>
+                        <Card.Text>
+                          Fizztastic- poczuj innyu wymiar smaku!
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                  <Col>
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src="src\Components\Pictures\HappyPlayLogo.png"
+                      />
+                      <Card.Body>
+                        <Card.Title>HappyPlay</Card.Title>
+                        <Card.Text>
+                          Poznaj świat przygody i zabawy wraz z nami!
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                  <Col>
+                    {" "}
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src="src\Components\Pictures\NextLevelPress.png"
+                      />
+                      <Card.Body>
+                        <Card.Title>NextLevelPress</Card.Title>
+                        <Card.Text>
+                          Podbijamy świat słowo po słowie, wnosząc nowy wymiar
+                          do literatury.
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </Row>
+                <div>
+                  <Row>
+                    <Col xs={4}></Col>
+                    <Col xs={6}>
+                      <h1 className="h1-applay">
+                        <strong>Dołacz już teraz!</strong>
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={3}></Col>
+                    <Col xs={6}>
+                      <h1 className="h1-applay">
+                        Wypełnij formulaż zgłoszeniowy
+                      </h1>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={5}></Col>
+                    <Col xs={6}>
+                      <Button variant="primary" onClick={handleShow}>
+                        Zapisz się
+                      </Button>{" "}
+                    </Col>
+                  </Row>
+                  <Row>
+                    {showForm && (
+                      <>
+                        <Form>
+                          <Form.Group
+                            className="mb-3"
+                            controlId="formBasicEmail"
+                          >
+                            <Form.Label>Adres Email</Form.Label>
+                            <Form.Control
+                              type="email"
+                              placeholder="twojafirma@gmail.com"
+                            />
+                            <Form.Text className="text-muted">
+                              Na ten adres email skontaktujemy sie w ciagu 7 dni
+                              roboczych z ofertą dostostowaną właśnie pod
+                              Panstwa firme!
+                            </Form.Text>
+                          </Form.Group>
+
+                          <FloatingLabel
+                            controlId="floatingTextarea"
+                            label="Prosze opisać co powinien zawierać państwa system ERP"
+                            className="mb-3"
+                          >
+                            <Form.Control
+                              as="textarea"
+                              placeholder="Leave a comment here"
+                            />
+                          </FloatingLabel>
+
+                          <Form.Group
+                            className="mb-3"
+                            controlId="formBasicCheckbox"
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              label="Wyrażam zgodę na przesyłanie informacji handlowych drogą elektroniczną"
+                              onChange={(e) => setAgreed(e.target.checked)}
+                            />
+                          </Form.Group>
+                          <Button
+                            variant="primary"
+                            type="submit"
+                            disabled={agreed}
+                          >
+                            Prześlij
+                          </Button>
+                        </Form>
+                      </>
+                    )}
+                  </Row>
+                </div>
+              </Container>
+            </div>
           </body>
         </div>
       )}

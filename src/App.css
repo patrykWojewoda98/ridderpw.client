@@ -72,6 +72,17 @@
   width: 100%;
 }
 
+.partners-bacground {
+  background: 
+  /* Pierwsze tło - gradient z koloru białego na tło z partners-background */ linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    ),
+    /* Drugie tło - partners-background */
+      url("../src/Components/Pictures/PartnersBackground.png") no-repeat
+      center/cover;
+}
+
 .tabs-maggin {
   margin-left: 20px; /* Margines z lewej strony */
   margin-right: 20px; /* Margines z prawej strony */
@@ -79,4 +90,22 @@
 
 body {
   background-color: white;
+}
+
+.h2-partners {
+  color: black;
+}
+h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.h1-applay {
+  left: 50%;
+  color: white;
+}
+
+.form-label {
+  color: white;
+
+  font-size: 1.3em; /* Powiększenie rozmiaru czcionki */
 }
