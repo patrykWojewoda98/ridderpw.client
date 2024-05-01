@@ -1,5 +1,5 @@
 import { CDBSidebarHeader } from "cdbreact";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -14,6 +14,7 @@ export const LoginMenu = ({ loginState }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleUserNameChange = (e) => setUserName(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -29,10 +30,10 @@ export const LoginMenu = ({ loginState }) => {
 
   const handleLogOutClick = () => {
     setIsLoggedIn(false);
+    navigate("/");
   };
 
   const handleCloseModal = () => setShowModal(false);
-
   return (
     <>
       {!isLoggedIn && (
