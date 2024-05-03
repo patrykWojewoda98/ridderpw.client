@@ -16,6 +16,8 @@ import { ReportsAndAnalyticsPage } from "./Pages/ReportsAndAnalyticsPage.jsx";
 import { LogisticPage } from "./Pages/LogisticPage.jsx";
 import { LoginProvider } from "./Components/Contexts/LoginContext.jsx";
 import Footer from "./Components/Leyouts/Footer.jsx";
+import { NewsPage } from "./Pages/NewsPage.jsx";
+import { MessagesPage } from "./Pages/MessagesPage.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -132,6 +134,38 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     <ResponsiveSideBar />
                   </div>
                   <ReportsAndAnalyticsPage />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/News"
+            element={
+              <>
+                <TopNavbar />
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  <div style={{ height: "92.5vh" }}>
+                    <ResponsiveSideBar />
+                  </div>
+                  <NewsPage />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/Messages"
+            element={
+              <>
+                <TopNavbar />
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  <div style={{ height: "92.5vh" }}>
+                    <ResponsiveSideBar />
+                  </div>
+                  <MessagesPage />
                 </div>
                 <Footer />
               </>

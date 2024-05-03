@@ -295,7 +295,7 @@ function App() {
                         <Card.Text>
                           Fizztastic- poczuj innyu wymiar smaku!
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Zobacz</Button>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -310,7 +310,7 @@ function App() {
                         <Card.Text>
                           Poznaj świat przygody i zabawy wraz z nami!
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Zobacz</Button>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -327,7 +327,7 @@ function App() {
                           Podbijamy świat słowo po słowie, wnosząc nowy wymiar
                           do literatury.
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Zobacz</Button>
                       </Card.Body>
                     </Card>
                   </Col>

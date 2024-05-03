@@ -4,7 +4,7 @@ import {
   CDBSidebarHeader,
   CDBSidebarMenuItem,
 } from "cdbreact";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -17,6 +17,7 @@ import "react-calendar/dist/Calendar.css";
 
 export default function ResponsiveSideBar() {
   const [date, setdate] = useState(new Date());
+  const navigate = useNavigate();
 
   const [showCalendar, setShowCalendar] = useState(false);
 
@@ -25,6 +26,22 @@ export default function ResponsiveSideBar() {
 
   const onChange = (date) => {
     setdate(date);
+  };
+
+  const handleShowNews = () => {
+    if (!isLoggedIn) {
+      alert("Aby zobaczyć wiadomości firmowe musisz być zalogowany!");
+    } else {
+      navigate("/News");
+    }
+  };
+
+  const handleShowMessages = () => {
+    if (!isLoggedIn) {
+      alert("Aby zobaczyć wiadomości firmowe musisz być zalogowany!");
+    } else {
+      navigate("/Messages");
+    }
   };
 
   const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
@@ -49,8 +66,12 @@ export default function ResponsiveSideBar() {
           <CDBSidebarMenuItem onClick={handleShowCalendar}>
             Kalendarz
           </CDBSidebarMenuItem>
-          <CDBSidebarMenuItem>Aktualności</CDBSidebarMenuItem>
-          <CDBSidebarMenuItem>Wiadomości</CDBSidebarMenuItem>
+          <CDBSidebarMenuItem onClick={handleShowNews}>
+            Aktualności
+          </CDBSidebarMenuItem>
+          <CDBSidebarMenuItem onClick={handleShowMessages}>
+            Wiadomości
+          </CDBSidebarMenuItem>
         </CDBSidebarHeader>
 
         <LoginMenu loginState={loginState} />
