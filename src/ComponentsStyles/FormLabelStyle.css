@@ -1,6 +1,6 @@
 .custom-label {
   color: black; /* Biały tekst */
-  font-size: 22px;
-  font-weight: bold; /* Pogrubienie tekstu */
-  background-color: rgba(255, 255, 255, 0.5); /* Półprzezroczyste tło */
+  font-size: 18px;
+
+  background-color: rgba(158, 153, 153, 0.5); /* Półprzezroczyste tło */
 }
