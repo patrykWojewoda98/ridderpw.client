@@ -22,6 +22,7 @@ export const LoginMenu = ({ loginState }) => {
   const handleLoginClick = () => {
     if (password === "asdf") {
       setIsLoggedIn(true);
+      navigate("/");
     } else {
       setShowModal(true);
       setPassword("");

@@ -18,6 +18,7 @@ import { LoginProvider } from "./Components/Contexts/LoginContext.jsx";
 import Footer from "./Components/Leyouts/Footer.jsx";
 import { NewsPage } from "./Pages/NewsPage.jsx";
 import { MessagesPage } from "./Pages/MessagesPage.jsx";
+import { NewPersonProvider } from "./Components/Contexts/NewPersonContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -101,7 +102,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   <div style={{ height: "92.5vh" }}>
                     <ResponsiveSideBar />
                   </div>
-                  <PersonnelPage />
+                  <NewPersonProvider>
+                    <PersonnelPage />
+                  </NewPersonProvider>
                 </div>
                 <Footer />
               </>
