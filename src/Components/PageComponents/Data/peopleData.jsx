@@ -4,10 +4,13 @@ import { EyeIcon } from "../Icons/EyeIcon";
 import { EditIcon } from "../Icons/EditIcon";
 import { DeleteIcon } from "../Icons/DeleteIcon";
 import { Tooltip } from "@nextui-org/react";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 import "../../../App.css";
 import "../../../ComponentsStyles/TabsStyle.css";
 import "../../../ComponentsStyles/FormLabelStyle.css";
 import { NewPersonContext } from "../../Contexts/NewPersonContext";
+import { Button } from "react-bootstrap";
 
 export let initialUsers = [
   {
@@ -18,10 +21,10 @@ export let initialUsers = [
     status: "Aktywny",
     age: "29",
     email: "tony.reichert@example.com",
-    peselNumber: "12345678901", // Przykładowa wartość dla peselNumber
-    yearsOfExperience: "5", // Przykładowa wartość dla yearsOfExperience
-    domicile: "ul. Grzybowska 123, 00-123 Warszawa", // Pełny adres dla domicile
-    numberOfKids: "2", // Przykładowa wartość dla numberOfKids
+    peselNumber: "12345678901",
+    yearsOfExperience: "5",
+    domicile: "ul. Grzybowska 123, 00-123 Warszawa",
+    numberOfKids: "2",
   },
   {
     id: 2,
@@ -87,9 +90,16 @@ export const columns = [
   { name: "Actions", key: "actions" },
 ];
 
-export const PeopleData = () => {
+export const PeopleData = ({
+  handleShowPasswordModal,
+  handleShowDetailsModal,
+}) => {
   const { newPerson } = useContext(NewPersonContext);
   const [users, setUsers] = useState(initialUsers);
+  const [showAuthorizationModal, setShowAuthorizationModal] = useState(false);
+  const [authorizationPassword, setAuthorizationPassword] = useState("");
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [userToDelete, setUserToDelete] = useState(null);
 
   useEffect(() => {
     if (newPerson) {
@@ -110,78 +120,139 @@ export const PeopleData = () => {
     setUsers((currentUsers) =>
       currentUsers.filter((user) => user.id !== userId)
     );
+    handleCloseAuthorizationModal();
+  };
+
+  const handleShowAuthorizationModal = (user) => {
+    setUserToDelete(user);
+    setShowAuthorizationModal(true);
+  };
+
+  const handleCloseAuthorizationModal = () => {
+    setShowAuthorizationModal(false);
+    setUserToDelete(null);
+    setAuthorizationPassword("");
+    setIsPasswordValid(false);
+  };
+
+  const validateAuthorizationPassword = () => {
+    if (authorizationPassword === "asdf") {
+      setIsPasswordValid(true);
+      deleteUser(userToDelete.id);
+    } else {
+      setIsPasswordValid(false);
+    }
   };
 
   return (
-    <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-          <th>#</th> {/* For row numbers */}
-          {columns.map((column, index) => (
-            <th key={index}>{column.name}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user, rowIndex) => (
-          <tr key={user.id}>
-            <td>{rowIndex + 1}</td> {/* Row number */}
-            {columns.map((column, colIndex) => {
-              if (column.key === "actions") {
-                return (
-                  <td key={colIndex}>
-                    <Tooltip
-                      color="primary"
-                      content={
-                        <span style={{ color: "white" }}>Zobacz szczegóły</span>
-                      }
-                    >
-                      <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                        <EyeIcon />
-                      </span>
-                    </Tooltip>
-                    <Tooltip
-                      color="secondary"
-                      content={
-                        <span style={{ color: "white" }}>
-                          Edytuj Dane Pracownika
-                        </span>
-                      }
-                    >
-                      <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                        <EditIcon />
-                      </span>
-                    </Tooltip>
-                    <Tooltip
-                      color="danger"
-                      content={<span style={{ color: "white" }}>Usuń</span>}
-                    >
-                      <span
-                        className="text-lg text-danger cursor-pointer active:opacity-50"
-                        onClick={() => deleteUser(user.id)}
-                      >
-                        <DeleteIcon />
-                      </span>
-                    </Tooltip>
-                  </td>
-                );
-              } else if (column.key === "status") {
-                // Apply the color based on the status
-                return (
-                  <td
-                    key={colIndex}
-                    style={{ color: statusColorMap[user.status] }}
-                  >
-                    {user[column.key]}
-                  </td>
-                );
-              } else {
-                return <td key={colIndex}>{user[column.key]}</td>; // Normal data display
-              }
-            })}
+    <>
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>#</th> {/* For row numbers */}
+            {columns.map((column, index) => (
+              <th key={index}>{column.name}</th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {users.map((user, rowIndex) => (
+            <tr key={user.id}>
+              <td>{rowIndex + 1}</td> {/* Row number */}
+              {columns.map((column, colIndex) => {
+                if (column.key === "actions") {
+                  return (
+                    <td key={colIndex}>
+                      <Tooltip
+                        color="primary"
+                        content={
+                          <span style={{ color: "white" }}>
+                            Zobacz szczegóły
+                          </span>
+                        }
+                      >
+                        <span
+                          className="text-lg text-default-400 cursor-pointer active:opacity-50"
+                          onClick={() => handleShowDetailsModal(user)}
+                        >
+                          <EyeIcon />
+                        </span>
+                      </Tooltip>
+                      <Tooltip
+                        color="secondary"
+                        content={
+                          <span style={{ color: "white" }}>
+                            Edytuj Dane Pracownika
+                          </span>
+                        }
+                      >
+                        <span
+                          className="text-lg text-default-400 cursor-pointer active:opacity-50"
+                          onClick={handleShowPasswordModal}
+                        >
+                          <EditIcon />
+                        </span>
+                      </Tooltip>
+                      <Tooltip
+                        color="danger"
+                        content={<span style={{ color: "white" }}>Usuń</span>}
+                      >
+                        <span
+                          className="text-lg text-danger cursor-pointer active:opacity-50"
+                          onClick={() => handleShowAuthorizationModal(user)}
+                        >
+                          <DeleteIcon />
+                        </span>
+                      </Tooltip>
+                    </td>
+                  );
+                } else if (column.key === "status") {
+                  // Apply the color based on the status
+                  return (
+                    <td
+                      key={colIndex}
+                      style={{ color: statusColorMap[user.status] }}
+                    >
+                      {user[column.key]}
+                    </td>
+                  );
+                } else {
+                  return <td key={colIndex}>{user[column.key]}</td>; // Normal data display
+                }
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+
+      <Modal
+        show={showAuthorizationModal}
+        onHide={handleCloseAuthorizationModal}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Prosze podać hasło</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group>
+            <Form.Control
+              type="password"
+              value={authorizationPassword}
+              onChange={(e) => setAuthorizationPassword(e.target.value)}
+            />
+          </Form.Group>
+          {!isPasswordValid && authorizationPassword !== "" && (
+            <p style={{ color: "red" }}>Nieprawidłowe hasło</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseAuthorizationModal}>
+            Anuluj
+          </Button>
+          <Button variant="primary" onClick={validateAuthorizationPassword}>
+            Zatwierdź
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };

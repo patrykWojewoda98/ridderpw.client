@@ -12,6 +12,9 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { NewPersonContext } from "../Components/Contexts/NewPersonContext";
 
+import Modal from "react-bootstrap/Modal";
+import { Table } from "react-bootstrap";
+
 export const PersonnelPage = () => {
   const [name, setName] = React.useState("");
   const [role, setRole] = React.useState("");
@@ -57,6 +60,34 @@ export const PersonnelPage = () => {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   };
 
+  const [showDetailsModal, setDeailsModal] = React.useState(false);
+  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
+  const [password, setPassword] = React.useState("");
+  const [isPasswordValid, setIsPasswordValid] = React.useState(false);
+  const [id, setId] = React.useState("");
+
+  const handleCloseDetailsModal = () => setDeailsModal(false);
+  const handleShowDetailsModal = (person) => {
+    setSelectedPerson(person);
+    setDeailsModal(true);
+  };
+
+  const handleClosePasswordModal = () => setShowPasswordModal(false);
+  const handleShowPasswordModal = () => setShowPasswordModal(true);
+
+  const validatePassword = () => {
+    // Przykładowa walidacja hasła
+    if (password === "asdf") {
+      setIsPasswordValid(true);
+      handleClosePasswordModal();
+      //dodać strone z edycją
+    } else {
+      setIsPasswordValid(false);
+    }
+  };
+
+  const [selectedPerson, setSelectedPerson] = React.useState(null);
+
   return (
     <>
       <Container fluid className="background">
@@ -87,7 +118,10 @@ export const PersonnelPage = () => {
               className="mb-3 custom-tabs"
             >
               <Tab eventKey="showPersonnelList" title="Lista Pracowników">
-                <PeopleData />
+                <PeopleData
+                  handleShowPasswordModal={handleShowPasswordModal}
+                  handleShowDetailsModal={handleShowDetailsModal}
+                />
               </Tab>
 
               <Tab
@@ -227,6 +261,83 @@ export const PersonnelPage = () => {
           </Row>
         </Form>
       </Container>
+
+      <Modal show={showPasswordModal} onHide={handleClosePasswordModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Prosze podać hasło</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          {!isPasswordValid && password !== "" && (
+            <p style={{ color: "red" }}>Nieprawidłowe hasło</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClosePasswordModal}>
+            Anuluj
+          </Button>
+          <Button variant="primary" onClick={validatePassword}>
+            Zatwierdź
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showDetailsModal} onHide={handleCloseDetailsModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Dane Pracownika</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selectedPerson && (
+            <Table striped bordered hover size="sm">
+              <tbody>
+                <tr>
+                  <td>Imie i nazwisko</td>
+                  <td>{selectedPerson.name}</td>
+                </tr>
+                <tr>
+                  <td>Rola</td>
+                  <td>{selectedPerson.role}</td>
+                </tr>
+                <tr>
+                  <td>Wypłata</td>
+                  <td>{selectedPerson.salary}</td>
+                </tr>
+                <tr>
+                  <td>Adres Email</td>
+                  <td>{selectedPerson.email}</td>
+                </tr>
+                <tr>
+                  <td>Pesel</td>
+                  <td>{selectedPerson.peselNumber}</td>
+                </tr>
+                <tr>
+                  <td>Lata doświadczenia</td>
+                  <td>{selectedPerson.yearsOfExperience}</td>
+                </tr>
+                <tr>
+                  <td>Adres zamieszkania</td>
+                  <td>{selectedPerson.domicile}</td>
+                </tr>
+                <tr>
+                  <td>Liczba dzieci</td>
+                  <td>{selectedPerson.numberOfKids}</td>
+                </tr>
+              </tbody>
+            </Table>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleCloseDetailsModal}>
+            Zamknij
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
