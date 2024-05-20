@@ -1,7 +1,7 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import "../App.css";
-import "../ComponentsStyles/FinancesPageStyle.css";
+import "../App.css"; // Import stylu dla kontenera
 import { BarChart } from "@mui/x-charts/BarChart";
+import styles from "../ComponentsStyles/FinancesPageStyle.module.css"; // Import stylu dla kart
 
 export const FinancesPage = () => {
   let costs = [35, 44, 24, 34];
@@ -35,9 +35,12 @@ export const FinancesPage = () => {
     <Container fluid className="background">
       <Row style={{ marginBottom: "15px" }}>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Stan gotówki</strong>
               </Card.Title>
               <Card.Text>
@@ -64,9 +67,12 @@ export const FinancesPage = () => {
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Wyniki w poszczególnych kwartałach</strong>
               </Card.Title>
               <BarChart
@@ -80,14 +86,17 @@ export const FinancesPage = () => {
                 xAxis={[{ data: ["Q1", "Q2", "Q3", "Q4"], scaleType: "band" }]}
                 margin={{ top: 50, bottom: 30, left: 40, right: 10 }}
               />
-              <div className="right-align">W milionach zł</div>
+              <div className={styles["right-align"]}>W milionach zł</div>
             </Card.Body>
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Stan należności i zobowiązań</strong>
               </Card.Title>
               <Card.Text>
@@ -108,9 +117,12 @@ export const FinancesPage = () => {
       </Row>
       <Row>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Budżet vs Rzeczywiste</strong>
               </Card.Title>
               <BarChart
@@ -126,9 +138,12 @@ export const FinancesPage = () => {
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Wskaźniki finansowe</strong>
               </Card.Title>
               <Card.Text>
@@ -148,9 +163,12 @@ export const FinancesPage = () => {
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "100%", height: "100%" }}>
+          <Card
+            className={styles["col-background"]}
+            style={{ width: "100%", height: "100%" }}
+          >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title className={styles["finances-card-title"]}>
                 <strong>Analiza przepływów pieniężnych</strong>
               </Card.Title>
               <Card.Text>

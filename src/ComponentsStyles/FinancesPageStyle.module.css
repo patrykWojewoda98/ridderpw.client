@@ -1,12 +1,7 @@
-.background {
-  background-color: #f8f9fa;
-  padding: 20px;
-}
-
 .col-background {
   background-color: white;
   margin: 5px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -21,9 +16,4 @@
   text-align: center;
   margin-top: 10px;
   font-size: 2rem;
-}
-
-.right-align {
-  text-align: right;
-  margin-right: 5%;
 }
