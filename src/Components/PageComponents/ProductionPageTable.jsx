@@ -79,17 +79,13 @@ export const ProductionPageTable = () => {
                 />
               </Link>
               {/*Deklaracja Modalu ktury sie ma pojawić */}
-              <Modal show={show} onHide={handleClose}>
+              <Modal size="xl" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Rysunek techniczny Oraz rysunek 3D</Modal.Title>
                 </Modal.Header>
                 <ModalBody>
                   <Image
-                    src="../src/Components/Pictures/TechnicalDrawings/Rolka Transportowa rysunek techniczny.png"
-                    className="modal-image"
-                  />
-                  <Image
-                    src="../src/Components/Pictures/TechnicalDrawings/Rolka Transportowa 3D.png"
+                    src="../src/Components/Pictures/PłytaMigafki.png"
                     className="modal-image"
                   />
                 </ModalBody>

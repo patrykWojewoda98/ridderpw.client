@@ -1,0 +1,29 @@
+.background {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.col-background {
+  background-color: white;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.finances-col-background {
+  background-color: white;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.finances-card-title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.right-align {
+  text-align: right;
+  margin-right: 5%;
+}
