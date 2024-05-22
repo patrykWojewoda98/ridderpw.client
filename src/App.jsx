@@ -144,7 +144,9 @@ function App() {
                         strat.
                       </Card.Text>
                       <Button variant="primary">
-                        <Link to={"/Reports&Analytics"}>Idz do Finansów</Link>
+                        <Link to={"/Reports&Analytics"}>
+                          Idz do Raportów i Analiz
+                        </Link>
                       </Button>
                     </Card.Body>
                   </Card>

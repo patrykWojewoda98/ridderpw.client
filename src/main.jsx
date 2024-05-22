@@ -131,9 +131,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={
               <>
                 <TopNavbar />
-                <div style={{ display: "flex" }}>
-                  {" "}
-                  <div style={{ height: "92.5vh" }}>
+                <div style={{ display: "flex", height: "100%" }}>
+                  {/*Ten fragment odpowiada za rozmieszczenie komponentów obok siebie */}
+                  <div>
                     <ResponsiveSideBar />
                   </div>
                   <ReportsAndAnalyticsPage />
