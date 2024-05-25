@@ -1,9 +1,17 @@
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 
 export const CompanySelection = () => {
+  const [companyName, setCompanyName] = useState(null);
   return (
     <Form.Group className="mb-3">
-      <Form.Select aria-label="Default select example">
+      <Form.Select
+        aria-label="Default select example"
+        defaultValue={companyName}
+        onChange={(e) => {
+          setCompanyName(e.target.value);
+        }}
+      >
         <option>Wybierz</option>
         <option value="1">Tata Steel Ltd</option>
         <option value="2">

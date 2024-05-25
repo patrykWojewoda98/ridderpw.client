@@ -17,30 +17,38 @@ import { useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { TextField } from "@mui/material";
 
 export const ManagementPage = () => {
   {
     /*Tworzenie zmiennych stanowych odpowiedzialnych za obsługe formulaża-Dokończyć!!!*/
   }
+  //useState do karty Nowe zlecenie
   const [orderNumber, setOrderNumber] = useState("");
   const [technologist, setTechnologist] = useState("");
   const [productName, setProductName] = useState("");
   const [nuberOfElements, setNumberOfElements] = useState("");
-
   const [machine, setMachine] = useState("");
   const [machiningTime, setMachiningTime] = useState("");
   const [technicalDrawing, setTechnicalDrawing] = useState("");
 
+  //useState do karty NowaFirma
+  const [companyName, setCompanyName] = useState("");
+  const [category, setCategory] = useState(React.useState(null));
+  const [nip, setNip] = useState("");
+  const [address, setAddress] = useState("");
+  const [country, setCountry] = useState("");
+
+  //useState do karty Reklamacje
+  const [complaintOrderNumber, setComplaintOrderNumber] = useState("");
+  const [comments, setComments] = useState("");
   //Obsługa datePickera
   const [selectedDate, setSelectedDate] = React.useState(null);
 
   return (
-    <Container fluid>
+    <Container fluid className="background">
       <Form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("sadsadsa");
         }}
       >
         <Row>
@@ -62,7 +70,6 @@ export const ManagementPage = () => {
                       defaultValue={orderNumber}
                       type="text"
                       onChange={(e) => {
-                        console.log(e);
                         setOrderNumber(e.target.value);
                       }}
                     />
@@ -128,6 +135,7 @@ export const ManagementPage = () => {
                         <DatePicker
                           value={selectedDate}
                           className="datePicker"
+                          //obługa onChange dla Datepickera
                           onChange={(date) => setSelectedDate(date)}
                         />
                       </LocalizationProvider>
@@ -180,13 +188,24 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Nazwa firmy</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control
+                      type="text"
+                      defaultValue={companyName}
+                      onChange={(e) => {
+                        setCompanyName(e.target.value);
+                      }}
+                    />
                   </Form.Group>
                 </Col>
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Kategoria</Form.Label>
-                    <CategorySelection />
+                    <CategorySelection
+                      defaultValue={category}
+                      onChange={(e) => {
+                        setCategory(e.target.value);
+                      }}
+                    />
                   </Form.Group>
                 </Col>
               </Row>
@@ -194,7 +213,13 @@ export const ManagementPage = () => {
                 <Col xs={4}>
                   <Form.Group className="mb-3">
                     <Form.Label>Nip</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control
+                      type="text"
+                      defaultValue={nip}
+                      onChange={(e) => {
+                        setNip(e.target.value);
+                      }}
+                    />
                   </Form.Group>
                 </Col>
                 <Col>
@@ -203,6 +228,8 @@ export const ManagementPage = () => {
                     <Form.Control
                       type="text"
                       placeholder="ul. Polna2 32-700 Bochnia"
+                      defaultValue={address}
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </Form.Group>
                 </Col>
@@ -212,8 +239,14 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Kraj</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option>Wybierz</option>
+                    <Form.Select
+                      aria-label="Default select example"
+                      defaultValue={country}
+                      onChange={(e) => {
+                        setCountry(e.target.value);
+                      }}
+                    >
+                      <option value={null}>Wybierz</option>
                       <option value="1">Polska</option>
                       <option value="2">Niemcy</option>
                       <option value="3">Holandia</option>
@@ -235,7 +268,13 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Numer Zlecenia</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control
+                      type="text"
+                      defaultValue={complaintOrderNumber}
+                      onChange={(e) => {
+                        setComplaintOrderNumber(e.target.value);
+                      }}
+                    />
                   </Form.Group>
                 </Col>
               </Row>
@@ -243,7 +282,13 @@ export const ManagementPage = () => {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Uwagi</Form.Label>
-                    <Form.Control as="textarea" />
+                    <Form.Control
+                      as="textarea"
+                      defaultValue={comments}
+                      onChange={(e) => {
+                        setComments(e.target.value);
+                      }}
+                    />
                   </Form.Group>
                 </Col>
               </Row>
@@ -257,14 +302,19 @@ export const ManagementPage = () => {
               variant="success"
               type="submit"
               disabled={
-                orderNumber.length === 0 ||
-                technologist.length === 0 ||
-                productName.length === 0 ||
-                nuberOfElements.length === 0 ||
-                selectedDate === null ||
-                machine.length === 0 ||
-                machiningTime.length === 0 ||
-                technicalDrawing.length === 0
+                (orderNumber.length === 0 ||
+                  technologist.length === 0 ||
+                  productName.length === 0 ||
+                  nuberOfElements.length === 0 ||
+                  selectedDate === null ||
+                  machine.length === 0 ||
+                  machiningTime.length === 0 ||
+                  technicalDrawing.length === 0) &&
+                (companyName.length === 0 ||
+                  category === null ||
+                  nip.length === 0 ||
+                  address.length === 0 ||
+                  country.length === 0)
               }
             >
               Zapisz

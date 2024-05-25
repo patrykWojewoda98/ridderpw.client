@@ -50,7 +50,7 @@ export const PersonnelPage = () => {
       birthYear -= 100;
     }
 
-    const birthMonth = (month % 20) - 1; // PESEL stores month as MM or MM+20
+    const birthMonth = (month % 20) - 1; // PESEL zawiera informacje o miesiącu jako da
     const birthDay = day;
 
     const birthDate = new Date(birthYear, birthMonth, birthDay);
