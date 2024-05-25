@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:5173",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\wojew\\OneDrive\\Pulpit\\Projekt Indywidualny Tworzenie iterfejsów użytkownika\\RidderPW\\RidderPW.Server\\..\\ridderpw.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
