@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RidderPW.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad6e706846b01b219c6f0e940343398d246c9274")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0dee337a014f9d5b3a0071d9a7a1986f8e65bc2")]
 [assembly: System.Reflection.AssemblyProductAttribute("RidderPW.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RidderPW.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
