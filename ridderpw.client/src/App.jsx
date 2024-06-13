@@ -14,7 +14,7 @@ import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 
 function App() {
-  const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
+  const { isLoggedIn, setIsLoggedIn, name, setName } = useContext(LoginContext);
   const loginState = {
     isLoggedIn,
     setIsLoggedIn,

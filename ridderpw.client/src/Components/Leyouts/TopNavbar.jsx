@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { LoginContext } from "../Contexts/LoginContext";
 
 export const TopNavbar = () => {
-  const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
+  const { isLoggedIn, setIsLoggedIn, name, setName } = useContext(LoginContext);
   const loginState = {
     isLoggedIn,
     setIsLoggedIn,

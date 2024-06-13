@@ -4,19 +4,24 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { LoginContext } from "../../Contexts/LoginContext";
 
 export const LoginMenu = ({ loginState }) => {
-  const { isLoggedIn, setIsLoggedIn } = loginState;
+  const { isLoggedIn, setIsLoggedIn, name, setName } = useContext(LoginContext);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  const handleUserNameChange = (e) => setUserName(e.target.value);
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value);
+    setName(e.target.value);
+  };
+
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const handleLoginClick = () => {

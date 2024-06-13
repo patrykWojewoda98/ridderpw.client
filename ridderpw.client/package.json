@@ -26,9 +26,12 @@
     "@nextui-org/system": "^2.1.2",
     "@nextui-org/table": "^2.0.33",
     "@nextui-org/theme": "^2.2.3",
+    "ant": "^0.2.0",
+    "antd": "^5.18.0",
     "cdbreact": "^1.5.18",
     "dayjs": "^1.11.10",
     "framer-motion": "^11.1.9",
+    "lodas": "^1.2.0",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
@@ -37,6 +40,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-syntax-highlighter": "^15.5.0",
+    "socket.io-client": "^4.7.5",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
